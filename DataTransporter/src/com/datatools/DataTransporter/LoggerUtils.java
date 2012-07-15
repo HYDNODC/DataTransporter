@@ -14,7 +14,7 @@ import org.apache.log4j.RollingFileAppender;
 public class LoggerUtils {
 	static Calendar calendar = Calendar.getInstance();
 	static SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM HH.mm");
-	public static String logFileName = "wiproflexconnector "+dateFormat.format(calendar.getTime());
+	public static String logFileName = "dataTransporter "+dateFormat.format(calendar.getTime());
 	/*static {
 		
 		Logger rootLogger = Logger.getRootLogger(); 
@@ -26,7 +26,7 @@ public class LoggerUtils {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			Logger pkgLogger = rootLogger.getLoggerRepository().getLogger("com.wipro.flexconnector");  
+			Logger pkgLogger = rootLogger.getLoggerRepository().getLogger("com.datatools.DataTransporter");  
 			
 			pkgLogger.setLevel(Level.DEBUG);  
 			
@@ -46,7 +46,7 @@ public class LoggerUtils {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-//    	PropertyConfigurator.configure(FlexConnectorConstants.LOG4JFILE_LOCATION+"/"+"log4j.properties");
+//    	PropertyConfigurator.configure(DataTransporterConstants.LOG4JFILE_LOCATION+"/"+"log4j.properties");
 	}
 	*/
 

@@ -90,11 +90,7 @@ public abstract class Connector implements ConnectorLifeCycle {
 	}
 
 	// this method will activate connectors based on connection configuration
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see com.wipro.flexconnector.connector.ConnectorLifeCycle#activate()
-	 */
+
 	public void activate() {
 		doConnect();
 		doPreInitValidation();
@@ -183,11 +179,7 @@ public abstract class Connector implements ConnectorLifeCycle {
 		setStatus(ConnectorStatus.PAUSE);
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see com.wipro.flexconnector.connector.ConnectorLifeCycle#deactivate()
-	 */
+
 	public void deactivate() {
 
 		doStop();
@@ -305,7 +297,7 @@ public abstract class Connector implements ConnectorLifeCycle {
 
 		case ONE_TIME_READ:
 			connectorReadStrategy = new OneTimeReadStrategy(this);
-//			FlexConnector.log.info("read Strategy:ONE_TIME_READ Triggered");
+            log.info("read Strategy:ONE_TIME_READ Triggered");
 			break;
 
 		case POLL_AND_READ:
@@ -327,13 +319,13 @@ public abstract class Connector implements ConnectorLifeCycle {
 
 		case ONE_TIME_WRITE:
 			connectorWriteStrategy = new OneTimeWriteStrategy(this);
-//			FlexConnector.log.info("write Strategy:ONE_TIME_WRITE Triggered");
+           log.info("write Strategy:ONE_TIME_WRITE Triggered");
 			break;
 
 		case POLL_AND_WRITE:
 			connectorWriteStrategy = new PollAndWriteStrategy(this);
 			PollAndWriteStrategy.data=this.data;
-//			FlexConnector.log.info("write Strategy:POLL_AND_WRITE Triggered");
+            log.info("write Strategy:POLL_AND_WRITE Triggered");
 			break;
 
 		default:
@@ -645,43 +637,20 @@ public abstract class Connector implements ConnectorLifeCycle {
 		return outRecord;
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see com.wipro.flexconnector.connector.ConnectorLifeCycle#connect()
-	 */
+
 
 	public abstract void connect();
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see com.wipro.flexconnector.connector.ConnectorLifeCycle#disconnect()
-	 */
+
 	public abstract void disconnect();
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see
-	 * com.wipro.flexconnector.connector.ConnectorLifeCycle#preInitValidation()
-	 */
+
 	public abstract void preInitValidation();
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see com.wipro.flexconnector.connector.ConnectorLifeCycle#read()
-	 */
+
 	public abstract ArrayList read() throws ConnectorException;
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see
-	 * com.wipro.flexconnector.connector.ConnectorLifeCycle#write(java.util.
-	 * ArrayList)
-	 */
+
 	public abstract void write(ArrayList recordsToWrite)
 			throws ConnectorException;
 

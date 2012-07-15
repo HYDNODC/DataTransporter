@@ -9,8 +9,8 @@ public class DataTransporterConstants {
 	public static  String LOG4JFILE_LOCATION = "./"; 
 	public static final String FIELDMAPPING_PREFIX = "fieldMapping=";
 	public static final String CONNECTOR_PREFIX = "connector=";
-	public static final String CONNECTOR_NAMESPACE = "com.wipro.flexconnector.connector";
-	public static final String TRANSFORMATION_NAMESPACE = "com.wipro.flexconnector.connector.transformation";
+	public static final String CONNECTOR_NAMESPACE = "com.datatools.datatransporter.connector";
+	public static final String TRANSFORMATION_NAMESPACE = "com.datatools.datatransporter.connector.transformation";
 	public static final String IN_MEMORY_DATASTORE = "In Memory Data Store";
 	public static final String INTERFACE_XLS_LOCATION = "./xls/";
 	public static final int SCHEDULER_DEFAULT_FIRST_WORK_DAY = Calendar.MONDAY;

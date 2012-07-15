@@ -25,18 +25,14 @@ public class DataQueue implements Data {
 		this.connectionName = connectionName;
 	}
 
-	/* (non-Javadoc)
-	 * @see com.wipro.flexconnector.Data#getRawData()
-	 */
+
 	public Object getRawData() {
 		return rawData;
 	}
 
 	// return true if the task was successfully placed on the queue, false
 	// if the queue has been shut down.
-	/* (non-Javadoc)
-	 * @see com.wipro.flexconnector.Data#addRecord(java.util.List)
-	 */
+
 	public void addRecord(List record) {
 		synchronized (this) {
 			if (isStopped)
@@ -57,10 +53,7 @@ public class DataQueue implements Data {
 	}
 
 	// return the head task from the queue, or null if no task is available
-	/* (non-Javadoc)
-	 * Must not wait in case of recovery
-	 * @see com.wipro.flexconnector.Data#getRecord()
-	 */
+
 	public List getRecord() {
 		try {
 			return dataQueue.take();
@@ -71,10 +64,7 @@ public class DataQueue implements Data {
 	}
 	
 	// return the head task from the queue, or null if no task is available
-	/* (non-Javadoc)
-	 * Must not wait in case of recovery
-	 * @see com.wipro.flexconnector.Data#getRecord()
-	 */
+
 	public List recoverRecords() {
 		try {
 			
@@ -103,16 +93,12 @@ public class DataQueue implements Data {
 		return returnCollection;
 	}
 
-	/* (non-Javadoc)
-	 * @see com.wipro.flexconnector.Data#count()
-	 */
+
 	public int count() {
 		return dataQueue.size();
 	}
 
-	/* (non-Javadoc)
-	 * @see com.wipro.flexconnector.Data#setRawData(java.lang.Object)
-	 */
+
 	public void setRawData(Object rawData) {
 		this.rawData = rawData;
 	}

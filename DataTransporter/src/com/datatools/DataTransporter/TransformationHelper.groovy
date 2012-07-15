@@ -12,7 +12,7 @@ public class TransformationHelper {
 	
 //	public static String invokeTranformation(String methodName,
 //	def args,def connectorType) {
-//		def transformationClass = FlexConnectorConstants.TRANSFORMATION_NAMESPACE+"."+connectorType+ "Transformation"
+//		def transformationClass = DataTransporterConstants.TRANSFORMATION_NAMESPACE+"."+connectorType+ "Transformation"
 //		return Class.forName(transformationClass).newInstance()."$methodName"(args);
 //	}
 }

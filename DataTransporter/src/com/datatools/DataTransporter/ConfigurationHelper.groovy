@@ -7,7 +7,7 @@ package com.datatools.DataTransporter
  */
 public class ConfigurationHelper {
 	
-//	static Logger log = FlexConnectorUtils.getLoggerInstance(this.class);
+
 
 	/**
 	 * This method is should be called only from test class 

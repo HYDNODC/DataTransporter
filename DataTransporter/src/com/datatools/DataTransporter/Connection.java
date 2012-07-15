@@ -56,7 +56,7 @@ public class Connection {
 	private ArrayList<FieldMapping> fieldMappings = new ArrayList<FieldMapping>();
 	// Schedules are used by schedular to kick start/trigger connections
 	private ArrayList<Schedule> schedules = null;
-//	static Logger log = FlexConnectorUtils.getLoggerInstance(Connection.class);
+
 	public Data data = initializeDataStore(DataTransporterConstants.IN_MEMORY_DATASTORE);
 	Logger log=new Logger().getLogger(this.getClass());
 	
@@ -83,8 +83,7 @@ public class Connection {
 
 	public Connection(String connectionName) {
 		setName(connectionName);
-		/*FlexConnectorUtils.logFileName = connectionName;
-		log = FlexConnectorUtils.getLoggerInstance(Connection.class);*/
+
 		setStatus(ConnectionStatus.CONNECTION_NOT_ACTIVATED);
 	}
 
@@ -362,7 +361,7 @@ public class Connection {
 
 	private boolean connectorIsBeingActivated(ConnectorStatus connectorStatus) {
 		// Todo replace with log
-//		FlexConnector.log.debug("Checking if connector: " + this.name + "is being activated");
+      log.debug("Checking if connector: " + this.name + "is being activated");
 		return ConnectorStatus.isBeingActivated(connectorStatus);
 	}
 
@@ -372,8 +371,7 @@ public class Connection {
 
 		for (Connector modeConnector : modeconnectors) {
 
-			/*FlexConnector.log.info("Deactivating Connector " + modeConnector.getName()
-					+ " Status :" + modeConnector.getStatus());*/
+
 			log.info(modeConnector.getName()
 					+ ":" + modeConnector.getStatus());
 			// TODO replace the logic below with wait like in case of activate
@@ -417,8 +415,8 @@ public class Connection {
 
 				if (ConnectorStatus.hasBeenDeActivated(connectorStatus)) {
 					setStatus(ConnectionStatus.CONNECTOR_DEACTIVATED);
-					/*FlexConnector.log.debug("connector: " + this.name
-							+ "has been deactivated");*/
+					log.debug("connector: " + this.name
+							+ "has been deactivated");
 					
 					break;
 				}
@@ -433,8 +431,8 @@ public class Connection {
 
 	private boolean connectorIsBeingDeActivated(ConnectorStatus connectorStatus) {
 		// Todo replace with log
-		/*FlexConnector.log.debug("Checking if connector: " + this.name
-				+ "is being deactivated");*/
+		log.debug("Checking if connector: " + this.name
+				+ "is being deactivated");
 		return ConnectorStatus.isBeingDeActivated(connectorStatus);
 
 	}
